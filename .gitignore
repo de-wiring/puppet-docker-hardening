@@ -33,3 +33,14 @@ build/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+exp.*
+.kitchen
+Berksfile.lock
+.kitchen.local.yml
+shared_test_repo/
+test/integration
+.librarian/
+.tmp/
+Puppetfile.lock
+Gemfile.lock
