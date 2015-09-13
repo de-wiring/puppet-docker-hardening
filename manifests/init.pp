@@ -13,7 +13,7 @@ class docker_hardening(
 ) {
   case $provider {
     'garethr/docker': {
-      class{'docker_hardening::garethr': }
+      class{ 'docker_hardening::garethr': }
     }
     'none': {
       fail('You haven\'t configured a Docker provider for hardening.')
