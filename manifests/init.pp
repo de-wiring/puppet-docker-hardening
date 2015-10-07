@@ -9,7 +9,7 @@
 #   Supported: `garethr/docker`
 #
 class docker_hardening(
-  $provider = 'none',
+  $provider = 'garethr/docker',
 ) {
   case $provider {
     'garethr/docker': {
