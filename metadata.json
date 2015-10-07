@@ -1,0 +1,17 @@
+{
+  "name": "de-wiring-docker_hardening",
+  "version": "0.0.1",
+  "author": "Christina Neudert",
+  "summary": "Overlay module which installs docker via garethr/docker and add hardening sugar.",
+  "license": "Apache-2.0",
+  "source": "https://github.com/de-wiring/puppet-docker-hardening",
+  "project_page": "https://github.com/de-wiring/puppet-docker-hardening",
+  "issues_url": null,
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 4.2.0"},
+    {"name":"garethr/docker", "version_requirement": ">= 4.1.1"},
+    {"name":"puppetlabs/apt"}
+
+  ]
+}
+
