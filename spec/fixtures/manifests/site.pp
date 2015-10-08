@@ -1,0 +1,1 @@
+class { 'docker_hardening': }

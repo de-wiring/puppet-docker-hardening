@@ -1,0 +1,29 @@
+---
+driver:
+  name: vagrant
+provisioner:
+  name: puppet_apply
+  test_repo_uri: https://github.com/chrisN777/tests-docker-hardening.git
+  require_chef_for_busser: false
+  manifests_path: spec/fixtures/manifests
+platforms:
+- name: ubuntu-12.04
+  driver_config:
+    box: ubuntu/precise64
+    box_url: https://atlas.hashicorp.com/ubuntu/boxes/precise64/versions/20150730.1.0/providers/virtualbox.box
+- name: ubuntu-14.04
+  driver_config:
+    box: ubuntu/trusty64
+    box_url: https://atlas.hashicorp.com/puppetlabs/boxes/ubuntu-14.04-64-nocm/versions/1.0.2/providers/virtualbox.box
+- name: debian-7
+  driver_config:
+    box: debian/wheezy64
+    box_url: https://atlas.hashicorp.com/debian/boxes/wheezy64/versions/7.8.5/providers/virtualbox.box
+- name: debian-8
+  driver_config:
+    box: debian/jessie64
+    box_url: https://atlas.hashicorp.com/debian/boxes/jessie64/versions/8.1.0/providers/virtualbox.box
+suites:
+- name: default
+verifier:
+    ruby_bindir: '/usr/bin'

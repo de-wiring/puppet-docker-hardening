@@ -22,7 +22,7 @@ build/
 
 ## Environment normalisation:
 /.bundle/
-/vendor/bundle
+/vendor/
 /lib/bundler/man/
 
 # for a library or gem, you might want to ignore these files since the code is
@@ -33,3 +33,14 @@ build/
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
 .rvmrc
+
+exp.*
+.kitchen
+Berksfile.lock
+.kitchen.local.yml
+shared_test_repo/
+test/integration
+.librarian/
+.tmp/
+Puppetfile.lock
+Gemfile.lock
