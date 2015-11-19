@@ -5,7 +5,12 @@ provisioner:
   name: puppet_apply
   test_repo_uri: https://github.com/chrisN777/tests-docker-hardening.git
   require_chef_for_busser: false
+  # Simple site.pp which loads this module
   manifests_path: spec/fixtures/manifests
+  # We use librarian on our own.
+  # BTW: Librarian needs Puppetfile and metadata.json to work.
+  resolve_with_librarian_puppet: false
+  modules_path: modules
 platforms:
 - name: ubuntu-12.04
   driver_config:

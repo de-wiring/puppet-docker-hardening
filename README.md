@@ -3,7 +3,7 @@ Puppet repository/module for hardening docker on host and daemon level. See also
 
 ## Local Testing
 
-For local testing you can use vagrant and Virtualbox of VMWare to run tests locally. You will have to install Virtualbox and Vagrant on your system. See [Vagrant Downloads](http://downloads.vagrantup.com/) for a vagrant package suitable for your system. For all our tests we use `test-kitchen`. If you are not familiar with `test-kitchen` please have a look at [their guide](http://kitchen.ci/docs/getting-started).
+For local testing you can use vagrant and Virtualbox or VMWare to run tests locally. You will have to install Virtualbox and Vagrant on your system. See [Vagrant Downloads](http://downloads.vagrantup.com/) for a vagrant package suitable for your system. For all our tests we use `test-kitchen`. If you are not familiar with `test-kitchen` please have a look at [their guide](http://kitchen.ci/docs/getting-started).
 
 Next install test-kitchen:
 
@@ -11,6 +11,10 @@ Next install test-kitchen:
 # Install dependencies
 $ sudo gem install bundler
 $ bundle install
+
+# Install puppet module dependencies via librarian-puppet
+# In case you have an old version, be sure to remove .librarian/puppet/config before!
+$ bundle exec librarian-puppet install
 
 # Fetch tests
 $ bundle exec thor kitchen:fetch-remote-tests
