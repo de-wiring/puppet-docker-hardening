@@ -1,6 +1,17 @@
 ---
+<%
+kitchen_driver = 'vagrant'
+
+if ENV['KITCHEN_DRIVER']
+    kitchen_driver = ENV['KITCHEN_DRIVER']
+end
+%>
+
 driver:
-  name: vagrant
+  name: <%= kitchen_driver %>
+  synced_folders:
+    - ["spec/fixtures/manifests", "/opt/puppet/manifests"]
+    - ["spec/fixtures/modules", "/opt/puppet/modules"]
 provisioner:
   name: puppet_apply
   test_repo_uri: https://github.com/chrisN777/tests-docker-hardening.git
@@ -12,14 +23,27 @@ provisioner:
   resolve_with_librarian_puppet: false
   modules_path: modules
 platforms:
+- name: ubuntu-ocean-1404
+  driver_config:
+    region: fra1
+    image: ubuntu-14-04-x64
 - name: ubuntu-12.04
   driver_config:
     box: ubuntu/precise64
     box_url: https://atlas.hashicorp.com/ubuntu/boxes/precise64/versions/20150730.1.0/providers/virtualbox.box
-- name: ubuntu-14.04
+- name: ubuntu-1404
   driver_config:
     box: ubuntu/trusty64
     box_url: https://atlas.hashicorp.com/puppetlabs/boxes/ubuntu-14.04-64-nocm/versions/1.0.2/providers/virtualbox.box
+- name: ubuntu-docker-1404
+  driver_config:
+    use_sudo: false
+    image: ubuntu14.04-with-puppet
+    dockerfile: docker/Ubuntu-14.04-with-puppet/Dockerfile
+    platform: ubuntu
+  provisioner_config:
+    update_package_repos: false
+    require_puppet_repo: false
 - name: debian-7
   driver_config:
     box: debian/wheezy64
@@ -28,6 +52,7 @@ platforms:
   driver_config:
     box: debian/jessie64
     box_url: https://atlas.hashicorp.com/debian/boxes/jessie64/versions/8.1.0/providers/virtualbox.box
+
 suites:
 - name: default
 verifier:

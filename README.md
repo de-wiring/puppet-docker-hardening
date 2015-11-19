@@ -26,14 +26,25 @@ $ bundle exec rake lint
 $ bundle exec rake spec
 
 # fast test on one machine
-$ bundle exec kitchen test default-ubuntu-1204
+$ bundle exec kitchen test ubuntu-1404
 
 # test on Debian-based machines
 $ bundle exec kitchen test
 
 # for development
-$ bundle exec kitchen create default-ubuntu-1204
-$ bundle exec kitchen converge default-ubuntu-1204
+$ bundle exec kitchen create ubuntu-1404
+$ bundle exec kitchen converge ubuntu-1404
 ```
+
+## Using Digital Ocean
+
+For Credential setup see:
+https://github.com/test-kitchen/kitchen-digitalocean#installation-and-setup
+
+A working DigitalOcean config can be used with:
+```bash
+$ export KITCHEN_DRIVER="digitalocean"; bundle exec kitchen converge ocean
+```
+
 
 For more information see [test-kitchen](http://kitchen.ci/docs/getting-started)

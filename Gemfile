@@ -31,7 +31,9 @@ end
 group :integration do
   gem 'test-kitchen'
   gem 'kitchen-vagrant'
+  gem 'kitchen-docker'
   gem 'kitchen-puppet'
   gem 'kitchen-sharedtests', '~> 0.2.0'
+  gem 'kitchen-digitalocean'
 end
 
