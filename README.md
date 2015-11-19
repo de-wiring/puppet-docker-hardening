@@ -9,27 +9,27 @@ Next install test-kitchen:
 
 ```bash
 # Install dependencies
-gem install bundler
-bundle install
+$ sudo gem install bundler
+$ bundle install
 
 # Fetch tests
-bundle exec thor kitchen:fetch-remote-tests
+$ bundle exec thor kitchen:fetch-remote-tests
 
 # Do lint checks
-bundle exec rake lint
+$ bundle exec rake lint
 
 # Do spec checks
-bundle exec rake spec
+$ bundle exec rake spec
 
 # fast test on one machine
-bundle exec kitchen test default-ubuntu-1204
+$ bundle exec kitchen test default-ubuntu-1204
 
 # test on Debian-based machines
-bundle exec kitchen test
+$ bundle exec kitchen test
 
 # for development
-bundle exec kitchen create default-ubuntu-1204
-bundle exec kitchen converge default-ubuntu-1204
+$ bundle exec kitchen create default-ubuntu-1204
+$ bundle exec kitchen converge default-ubuntu-1204
 ```
 
 For more information see [test-kitchen](http://kitchen.ci/docs/getting-started)
