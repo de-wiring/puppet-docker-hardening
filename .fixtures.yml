@@ -1,9 +1,11 @@
 fixtures:
   repositories:
     docker:
-      repo: https://github.com/garethr/garethr-docker.git
-      ref: v4.1.1
+        repo: https://github.com/garethr/garethr-docker.git
+        ref: v4.1.1
     stdlib: https://github.com/puppetlabs/puppetlabs-stdlib.git
-    apt: https://github.com/puppetlabs/puppetlabs-apt.git
+    apt:
+        repo: https://github.com/puppetlabs/puppetlabs-apt.git
+        ref: 2.1.0
   symlinks:
     docker_hardening: "#{source_dir}"
